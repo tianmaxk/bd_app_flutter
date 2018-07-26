@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'api.dart';
-import 'dart:convert';
-
-const root = 'https://newspwa.baidu.com';
 
 void main() => runApp(new MyApp());
 
@@ -633,6 +630,8 @@ const test = '''
 }
 ''';
 
+Map<String,Object> newsListMap = {};
+
 class Choice {
   Choice({ this.title, this.active });
   String title;
@@ -727,21 +726,45 @@ class _NewsListState extends State<NewsList> {
   @override
   //构建一个脚手架，里面塞入前面定义好的_buildNews类
   Widget build(BuildContext context) {
+    if(newsListMap[category]==null || _newslist.length>0){
+      newsListMap[category] = _newslist;
+    } else {
+      _newslist = newsListMap[category];
+    }
     print('_newslist.length='+_newslist.length.toString());
-    return new ListView.builder(
-      //ListView(列表视图)是material.dart中的基础控件
-      padding: const EdgeInsets.all(0.0), //padding(内边距)是ListView的属性，配置其属性值
-      physics: new AlwaysScrollableScrollPhysics(),
-      //通过ListView自带的函数itemBuilder，向ListView中塞入行，变量 i 是从0开始计数的行号
-      itemBuilder: (context, i) {
-        if (i.isOdd) return new Divider(); //奇数行塞入分割线对象
-        final index = i ~/ 2; //当前行号除以2取整，得到的值就是_suggestions数组项索引号
-        if(index>_newslist.length-1){
+    if(_newslist.length<=0){
+      return new Center(child: Image.asset(
+        'images/loading.gif',
+        width: 40.0,
+        height: 40.0,
+        fit: BoxFit.cover,
+      ),);
+    }
+    return new RefreshIndicator(
+        child: new ListView.builder(
+          //ListView(列表视图)是material.dart中的基础控件
+          padding: const EdgeInsets.all(0.0), //padding(内边距)是ListView的属性，配置其属性值
+          physics: new AlwaysScrollableScrollPhysics(),
+          //通过ListView自带的函数itemBuilder，向ListView中塞入行，变量 i 是从0开始计数的行号
+          itemBuilder: (context, i) {
+            if (i.isOdd) return new Divider(); //奇数行塞入分割线对象
+            final index = i ~/ 2; //当前行号除以2取整，得到的值就是_suggestions数组项索引号
+            if(index>_newslist.length-1){
+              return null;
+            }
+            print('_newslist.length='+_newslist.length.toString());
+            return _buildRow(_newslist[index]); //把这个数据项塞入ListView中
+          },
+          shrinkWrap: true,
+        ),
+        onRefresh: () async {
+          setState(() {
+            _newslist.clear();
+          });
+          _getNewsList(category);
           return null;
-        }
-        print('_newslist.length='+_newslist.length.toString());
-        return _buildRow(_newslist[index]); //把这个数据项塞入ListView中
-      });
+        },
+    );
   }
 
   String readTimestamp(int timestamp) {
@@ -766,22 +789,31 @@ class _NewsListState extends State<NewsList> {
   //定义的_newslist数组项属性
   Widget _buildRow(var news) {
     print(news['title']);
-    Widget OneImg = new Image.network("");
-    Widget ThreeImgs = new Image.network("");
+    Widget OneImg = Container();
+    Widget ThreeImgs = Container();
     if(news['imageurls']!=null && news['imageurls'].length>=3){
       ThreeImgs = Row(
           children: [
             Expanded(
               flex: 1,
-              child: new Image.network(news['imageurls'][0]['url_webp']),
+              child: Container(
+                padding: const EdgeInsets.only(right: 4.0,top:4.0),
+                child: new Image.network(news['imageurls'][0]['url_webp'])
+              ),
             ),
             Expanded(
               flex: 1,
-              child: new Image.network(news['imageurls'][1]['url_webp']),
+              child: Container(
+                  padding: const EdgeInsets.only(left: 2.0, right: 2.0,top:4.0),
+                  child: new Image.network(news['imageurls'][1]['url_webp'])
+              ),
             ),
             Expanded(
               flex: 1,
-              child: new Image.network(news['imageurls'][2]['url_webp']),
+              child: Container(
+                padding: const EdgeInsets.only(left: 4.0,top:4.0),
+                child: new Image.network(news['imageurls'][2]['url_webp'])
+              ),
             ),
           ]
       );

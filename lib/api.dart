@@ -75,7 +75,6 @@ class Api {
       't': getParamT(category,newids),
       'mid': '03c7a16f2e8028127e42c5f7ca9e210b',
       'ts': 0,
-      'topic': category,
       'type': 'info',
       'token': 'info',
       'ln': 20,
@@ -90,6 +89,9 @@ class Api {
       'screen_size_height': 812,
       'action': 1
     };
+    if(category!=null){
+      param["topic"] = category;
+    }
     if(newids!=null){
       param["nids"] = newids;
     }

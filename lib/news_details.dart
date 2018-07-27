@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'api.dart';
+import 'popup/img_show.dart';
 
 class NewsDetails extends StatelessWidget {
   NewsDetails({Key key, this.newsInfo}) : super(key: key);
@@ -18,7 +18,7 @@ class NewsDetails extends StatelessWidget {
         title: const Text('新闻详情'),
         //为AppBar对象的actions属性添加一个IconButton对象，actions属性值可以是Widget类型的数组
         actions: <Widget>[
-          new IconButton(icon: new Icon(Icons.favorite), onPressed: _onFavor),
+          new IconButton(icon: new Icon(Icons.favorite_border), onPressed: _onFavor),
         ],
       ),
       body: new NewsContent(newsInfo: newsInfo)
@@ -72,7 +72,7 @@ class _NewsContent extends State<NewsContent> {
         physics: new AlwaysScrollableScrollPhysics(),
         //通过ListView自带的函数itemBuilder，向ListView中塞入行，变量 i 是从0开始计数的行号
         itemBuilder: (context, i) {
-          if (i.isOdd) return new Divider(color: Colors.transparent,); //奇数行塞入分割线对象
+          if (i.isOdd) return new Container();// new Divider(color: Colors.transparent,); //奇数行塞入分割线对象
           final index = i ~/ 2; //当前行号除以2取整，得到的值就是_suggestions数组项索引号
           if(index==0){
             return _buildTitle(newsDetails['title']);
@@ -111,10 +111,13 @@ class _NewsContent extends State<NewsContent> {
   Widget _buildRow(var news) {
     String type = news['type'];
     if(type=='image'){
-      return Container(
-        padding: const EdgeInsets.all(6.0),
-        child: new Image.network(news['data']['small']['url_webp'])
-      );
+      String imageurl = news['data']['small']['url_webp'];
+      return GestureDetector(
+          onTap: ()=>BigImage(context: context).show(news['data']['big']['url_webp']),
+          child: Container(
+            padding: const EdgeInsets.all(6.0),
+            child: new Image.network(imageurl)
+          ));
     } else if(type=='text'){
       return Container(
           padding: const EdgeInsets.all(6.0),

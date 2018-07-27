@@ -29,6 +29,10 @@ class NewsHome extends StatelessWidget {
 
   }
 
+  void _handlePopupMenu(BuildContext context, String value){
+
+  }
+
   @override
   Widget build(BuildContext context) {
     choices = buildCategory();
@@ -41,6 +45,19 @@ class NewsHome extends StatelessWidget {
           //为AppBar对象的actions属性添加一个IconButton对象，actions属性值可以是Widget类型的数组
           actions: <Widget>[
             new IconButton(icon: new Icon(Icons.search), onPressed: _onSearch),
+            new PopupMenuButton<String>(
+              onSelected: (String value) { _handlePopupMenu(context, value); },
+              itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+                const PopupMenuItem<String>(
+                  value: 'myfavor',
+                  child: const Text('我的收藏'),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'history',
+                  child: const Text('浏览历史'),
+                ),
+              ],
+            ),
           ],
           bottom: new TabBar(
             isScrollable: true,

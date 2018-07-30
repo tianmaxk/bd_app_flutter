@@ -224,17 +224,17 @@ class _NewsListState extends State<NewsList> {
 
     Widget ret = Container(
       padding: const EdgeInsets.all(6.0),
-      child: Row(
-        children: [
-          OneImg,
-          Expanded(
-            flex: 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GestureDetector(
-                  onTap: ()=>_onSelectNews(news),
-                  child: Container(
+      child: GestureDetector(
+        onTap: ()=>_onSelectNews(news),
+        child: Row(
+          children: [
+            OneImg,
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: Text(
                       news['title'],
@@ -244,31 +244,31 @@ class _NewsListState extends State<NewsList> {
                       ),
                     ),
                   ),
-                ),
-                Row(
-                    children: [
-                      Text(
-                        readTimestamp(int.parse(news['ts'])),
-                        style: TextStyle(
-                          color: Colors.grey[500],
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          news['site'],
-                          textAlign: TextAlign.right,
+                  Row(
+                      children: [
+                        Text(
+                          readTimestamp(int.parse(news['ts'])),
                           style: TextStyle(
                             color: Colors.grey[500],
                           ),
                         ),
-                      )
-                    ]
-                ),
-                ThreeImgs,
-              ],
+                        Expanded(
+                          child: Text(
+                            news['site'],
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              color: Colors.grey[500],
+                            ),
+                          ),
+                        )
+                      ]
+                  ),
+                  ThreeImgs,
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
 

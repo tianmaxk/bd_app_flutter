@@ -9,8 +9,11 @@ class ImageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Center(
-      child: new Image.network(imageurl),
+    return Container(
+        color: Colors.black,
+        child: Center(
+          child: new Image.network(imageurl),
+        )
     );
   }
 }

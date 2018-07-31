@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'api.dart';
 import 'news_details.dart';
+import 'drawer_page.dart';
 
 Map<String,Object> newsListMap = {};
 
@@ -39,6 +40,7 @@ class NewsHome extends StatelessWidget {
     return new DefaultTabController(
       length: choices.length,
       child: new Scaffold(
+        drawer: new Drawer(child: new DrawerPage(),),
         appBar: new AppBar(
           titleSpacing: 12.0,
           title: const Text('百度新闻'),

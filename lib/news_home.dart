@@ -11,7 +11,7 @@ class Choice {
   bool active;
 }
 
-const defCategory = <String>['房产','财经','时尚','教育','游戏','旅游','人文','创意'];
+const defCategory = <String>['推荐','本地','娱乐','社会','军事','互联网','科技','国际','国内','体育','房产','财经','时尚','教育','游戏','旅游','人文','创意'];
 
 class NewsHome extends StatelessWidget {
   List<Choice> choices = <Choice>[];

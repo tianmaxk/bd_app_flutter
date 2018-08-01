@@ -1,13 +1,38 @@
 import 'package:flutter/material.dart';
 import 'api.dart';
 import 'popup/img_show.dart';
+import 'utils/sp_util.dart';
 
-class NewsDetails extends StatelessWidget {
+class NewsDetails extends StatefulWidget {
   NewsDetails({Key key, this.newsInfo}) : super(key: key);
   var newsInfo = null;
 
-  void _onFavor() {
+  @override
+  _NewsDetails createState() => new _NewsDetails();
+}
 
+class _NewsDetails extends State<NewsDetails> {
+  bool isFavor = false;
+  String orinid = '';
+
+  void _onFavor() {
+    SPUtil.setString("favornids", isFavor?'':(orinid+'|'+widget.newsInfo['nid']));
+    setState(() {
+      isFavor = !isFavor;
+    });
+  }
+
+  void _setFavor() async{
+    orinid = await SPUtil.getString("favornids");
+    print('orinid=$orinid');
+    setState(() {
+      isFavor = (('|'+orinid+'|').indexOf('|'+widget.newsInfo['nid']+'|')!=-1);
+    });
+  }
+
+  @override
+  void initState(){
+    _setFavor();
   }
 
   @override
@@ -18,10 +43,10 @@ class NewsDetails extends StatelessWidget {
         title: const Text('新闻详情'),
         //为AppBar对象的actions属性添加一个IconButton对象，actions属性值可以是Widget类型的数组
         actions: <Widget>[
-          new IconButton(icon: new Icon(Icons.favorite_border), onPressed: _onFavor),
+          new IconButton(icon: isFavor?new Icon(Icons.favorite):new Icon(Icons.favorite_border), onPressed: _onFavor),
         ],
       ),
-      body: new NewsContent(newsInfo: newsInfo)
+      body: new NewsContent(newsInfo: widget.newsInfo)
     );
   }
 }
@@ -31,16 +56,16 @@ class NewsContent extends StatefulWidget {
   var newsInfo;
 
   @override
-  _NewsContent createState() => new _NewsContent(newsInfo: newsInfo);
+  _NewsContent createState() => new _NewsContent();
 }
 
 class _NewsContent extends State<NewsContent> {
-  _NewsContent({this.newsInfo});
   var newsInfo;
   var newsDetails = null;
 
   @override
   void initState(){
+    newsInfo = widget.newsInfo;
     _getNewsInfo();
   }
 

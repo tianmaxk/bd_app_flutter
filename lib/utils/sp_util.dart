@@ -32,6 +32,20 @@ class SPUtil {
     return _prefs;
   }
 
+  // 写入缓存值
+  static void setString(String key, String value){
+    SPUtil.getInstance().then((spUtil){
+      SharedPreferences sp =  spUtil.getSP();
+      sp.setString(key, value);
+    });
+  }
+
+  // 获取缓存值
+  static Future<String> getString(String key) async {
+    SPUtil spUtil = await SPUtil.getInstance();
+    SharedPreferences sp =  spUtil.getSP();
+    return sp.getString(key);
+  }
 }
 
 

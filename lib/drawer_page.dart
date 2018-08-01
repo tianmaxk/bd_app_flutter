@@ -3,8 +3,9 @@ import 'dart:io';
 import 'dart:async';
 import 'package:image_picker/image_picker.dart';
 import 'utils/file_util.dart';
+import 'utils/route_util.dart';
 
-const String picturePath = "bd_user_pic_path";
+const String picturePath = "bd_user_pic_path.png";
 
 class DrawerBody extends StatefulWidget {
   @override
@@ -19,12 +20,14 @@ class _DrawerBodyState extends State<DrawerBody> {
 
   Future getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-    if(image!=null){
+    int len = await image.length();
+    print('len=$len');
+    if(len>0){
       FileUtil.saveImageFile(picturePath, image);
+      setState(() {
+        _image = image;
+      });
     }
-    setState(() {
-      _image = image;
-    });
   }
 
   void _onSelectPicture(){
@@ -32,10 +35,16 @@ class _DrawerBodyState extends State<DrawerBody> {
   }
 
   Future getOriImage() async {
-    _image = await FileUtil.getLocalFile(picturePath);
-    setState(() {
+    File image = await FileUtil.getLocalFile(picturePath);
+    if(image!=null){
+      setState(() {
+        _image = image;
+      });
+    }
+  }
 
-    });
+  void _gotoBaiduIndex(){
+    RouteUtil.route2Web(context, '百度搜索', 'http://www.baidu.com');
   }
 
   @override
@@ -75,10 +84,13 @@ class _DrawerBodyState extends State<DrawerBody> {
 //            selected: true,
         ),
         const Divider(),
-        const ListTile(
-          leading: const Icon(Icons.account_balance),
-          title: const Text('腾讯新闻'),
-          enabled: true,
+        InkWell(
+          onTap: () {_gotoBaiduIndex();},
+          child: ListTile(
+            leading: const Icon(Icons.account_balance),
+            title: const Text('百度搜素'),
+            enabled: true,
+          ),
         ),
       ],
     );

@@ -124,7 +124,6 @@ class _ScalableImageState extends State<ScalableImage> {
   }
 
   void _handleScaleUpdate(ScaleUpdateDetails event) {
-
     //init old values
     double newScale=_scale;
     Offset newOffset=_offset;

@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'dart:async';
+import 'package:image_picker/image_picker.dart';
+import 'utils/file_util.dart';
+
+const String picturePath = "bd_user_pic_path";
 
 class DrawerBody extends StatefulWidget {
   @override
@@ -9,9 +15,32 @@ class DrawerBody extends StatefulWidget {
 }
 
 class _DrawerBodyState extends State<DrawerBody> {
+  File _image;
+
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    if(image!=null){
+      FileUtil.saveImageFile(picturePath, image);
+    }
+    setState(() {
+      _image = image;
+    });
+  }
+
+  void _onSelectPicture(){
+    getImage();
+  }
+
+  Future getOriImage() async {
+    _image = await FileUtil.getLocalFile(picturePath);
+    setState(() {
+
+    });
+  }
 
   @override
   void initState() {
+    getOriImage();
     super.initState();
   }
 
@@ -20,23 +49,21 @@ class _DrawerBodyState extends State<DrawerBody> {
     return new ListView(
       children: <Widget>[
         DrawerHeader(
-          margin: const EdgeInsets.all(0.0),
+          margin: const EdgeInsets.only(bottom:6.0),
           padding: const EdgeInsets.all(0.0),
           child: Container(
             color: Colors.blue,
             child: Center(
-//                child: const Text(
-//                  '新闻类别',
-//                  style: TextStyle(
-//                      color: Colors.white,
-//                      fontSize: 18.0
-//                  ),
-//                )
-              child: new ClipOval(
-                child: new SizedBox(
-                  width: 100.0,
-                  height: 100.0,
-                  child: new Image.network("https://sfault-avatar.b0.upaiyun.com/206/120/2061206110-5afe2c9d40fa3_huge256",fit: BoxFit.fill,),
+              child: GestureDetector(
+                onTap: ()=>_onSelectPicture(),
+                child: new ClipOval(
+                  child: new SizedBox(
+                    width: 100.0,
+                    height: 100.0,
+                    child: _image != null
+                        ? new Image.file(_image,fit: BoxFit.fill,)
+                        : new Image.network("https://sfault-avatar.b0.upaiyun.com/206/120/2061206110-5afe2c9d40fa3_huge256",fit: BoxFit.fill,),
+                  ),
                 ),
               ),
             ),

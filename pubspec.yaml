@@ -21,7 +21,7 @@ dependencies:
   cookie_jar: ^0.0.4
   dio: ^0.1.6
   path_provider: ^0.4.0
-  scalable_image: ^1.1.1
+  image_picker: ^0.4.6
 
 dev_dependencies:
   flutter_test:

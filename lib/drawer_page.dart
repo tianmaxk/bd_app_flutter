@@ -71,7 +71,7 @@ class _DrawerBodyState extends State<DrawerBody> {
                     height: 100.0,
                     child: _image != null
                         ? new Image.file(_image,fit: BoxFit.fill,)
-                        : new Image.network("https://sfault-avatar.b0.upaiyun.com/206/120/2061206110-5afe2c9d40fa3_huge256",fit: BoxFit.fill,),
+                        : new Image.asset("userpic.jpeg",fit: BoxFit.fill,),
                   ),
                 ),
               ),

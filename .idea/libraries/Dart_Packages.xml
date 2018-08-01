@@ -114,10 +114,24 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_html_view">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_html_view-0.3.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_test">
           <value>
             <list>
               <option value="$USER_HOME$/flutter/packages/flutter_test/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="flutter_webview_plugin">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_webview_plugin-0.1.6/lib" />
             </list>
           </value>
         </entry>
@@ -489,6 +503,8 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/dio-0.1.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_advanced_networkimage-0.2.11/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_cache_manager-0.1.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_html_view-0.3.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_webview_plugin-0.1.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/front_end-0.1.0-alpha.12/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/glob-1.1.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/html-0.13.3+1/lib" />

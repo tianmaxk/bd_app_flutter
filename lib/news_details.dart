@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'api.dart';
 import 'popup/img_show.dart';
 import 'utils/sp_util.dart';
+import 'utils/route_util.dart';
 
 class NewsDetails extends StatefulWidget {
   NewsDetails({Key key, this.newsInfo}) : super(key: key);
@@ -30,6 +31,10 @@ class _NewsDetails extends State<NewsDetails> {
     });
   }
 
+  void _gotoWeb(){
+    RouteUtil.route2Web(context, widget.newsInfo['title'], widget.newsInfo['url']);
+  }
+
   @override
   void initState(){
     _setFavor();
@@ -44,6 +49,7 @@ class _NewsDetails extends State<NewsDetails> {
         //为AppBar对象的actions属性添加一个IconButton对象，actions属性值可以是Widget类型的数组
         actions: <Widget>[
           new IconButton(icon: isFavor?new Icon(Icons.favorite):new Icon(Icons.favorite_border), onPressed: _onFavor),
+          new IconButton(icon: new Icon(Icons.web), onPressed: _gotoWeb)
         ],
       ),
       body: new NewsContent(newsInfo: widget.newsInfo)

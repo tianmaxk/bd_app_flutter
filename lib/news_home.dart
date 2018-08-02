@@ -31,7 +31,9 @@ class NewsHome extends StatelessWidget {
   }
 
   void _handlePopupMenu(BuildContext context, String value){
-
+    if(value=='myfavor'){
+      Navigator.pushNamed(context, '/favorlist');
+    }
   }
 
   @override

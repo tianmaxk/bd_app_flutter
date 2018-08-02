@@ -36,6 +36,7 @@ class _DrawerBodyState extends State<DrawerBody> {
 
   Future getOriImage() async {
     File image = await FileUtil.getLocalFile(picturePath);
+    print(image);
     if(image!=null){
       setState(() {
         _image = image;
@@ -71,7 +72,7 @@ class _DrawerBodyState extends State<DrawerBody> {
                     height: 100.0,
                     child: _image != null
                         ? new Image.file(_image,fit: BoxFit.fill,)
-                        : new Image.asset("userpic.jpeg",fit: BoxFit.fill,),
+                        : new Image.asset("images/userpic.jpeg",fit: BoxFit.fill,),
                   ),
                 ),
               ),

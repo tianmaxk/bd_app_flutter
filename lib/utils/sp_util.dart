@@ -46,6 +46,12 @@ class SPUtil {
     SharedPreferences sp =  spUtil.getSP();
     return sp.getString(key);
   }
+
+  // 获得SharedPreferences
+  static Future<SharedPreferences> getSharedPreferences() async {
+    SPUtil spUtil = await SPUtil.getInstance();
+    return spUtil.getSP();
+  }
 }
 
 

@@ -17,7 +17,10 @@ class _NewsDetails extends State<NewsDetails> {
   String orinid = '';
 
   void _onFavor() {
-    SPUtil.setString("favornids", isFavor?'':(orinid+'|'+widget.newsInfo['nid']));
+    String nid = widget.newsInfo['nid'];
+    print('nid=$nid');
+    SPUtil.setString("favornids", isFavor?'':(orinid==null?nid:'${orinid}|${nid}'));
+    SPUtil.setString("favortitle_${nid}", widget.newsInfo['title']);
     setState(() {
       isFavor = !isFavor;
     });
@@ -27,7 +30,7 @@ class _NewsDetails extends State<NewsDetails> {
     orinid = await SPUtil.getString("favornids");
     print('orinid=$orinid');
     setState(() {
-      isFavor = (('|'+orinid+'|').indexOf('|'+widget.newsInfo['nid']+'|')!=-1);
+      isFavor = (('|${orinid}|').indexOf('|${widget.newsInfo['nid']}|')!=-1);
     });
   }
 
@@ -80,6 +83,7 @@ class _NewsContent extends State<NewsContent> {
     var newsjson = newslst['data']['news'][0];
     print(newsjson);
     setState(() {
+      newsInfo['url'] = newsjson['url'];
       newsDetails = newsjson;
     });
   }

@@ -26,24 +26,31 @@ class _ImageContent extends State<ImageContent> {
     super.dispose();
   }
 
+  void _quitImgShow(){
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black,
-      alignment: Alignment.center,
-        child: ZoomableWidget(
-          maxScale: 16.0,
-          minScale: 0.5,
-          child: Image.network(imageurl),
-        ),
-//      child: new ScalableImage(
-//        imageProvider: new NetworkImage(imageurl),
-//        dragSpeed: 4.0,
-//        maxScale: 16.0,
-//        wrapInAspect: true,
-//        enableScaling: true,
-//        screenSize: MediaQuery.of(context).size,
-//      ),
+    return GestureDetector(
+      onTap: _quitImgShow,
+      child:Container(
+        color: Colors.black,
+        alignment: Alignment.center,
+          child: ZoomableWidget(
+            maxScale: 16.0,
+            minScale: 0.5,
+            child: Image.network(imageurl),
+          ),
+  //      child: new ScalableImage(
+  //        imageProvider: new NetworkImage(imageurl),
+  //        dragSpeed: 4.0,
+  //        maxScale: 16.0,
+  //        wrapInAspect: true,
+  //        enableScaling: true,
+  //        screenSize: MediaQuery.of(context).size,
+  //      ),
+      ),
     );
   }
 }

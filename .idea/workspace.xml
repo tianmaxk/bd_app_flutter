@@ -6,12 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03e5a76c-70d5-4575-b81a-f2378a6cb880" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/bd_app_flutter.iml" afterPath="$PROJECT_DIR$/bd_app_flutter.iml" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" />
-      <change beforePath="$PROJECT_DIR$/lib/drawer_page.dart" afterPath="$PROJECT_DIR$/lib/drawer_page.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/favor_list.dart" afterPath="$PROJECT_DIR$/lib/favor_list.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" afterPath="$PROJECT_DIR$/lib/main.dart" />
+      <change beforePath="$PROJECT_DIR$/lib/popup/img_show.dart" afterPath="$PROJECT_DIR$/lib/popup/img_show.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -32,7 +27,7 @@
       <file leaf-file-name="news_home.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/news_home.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
+            <state relative-caret-position="0">
               <caret line="123" column="15" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="15" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -130,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlutterWebviewPlugin.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ios/Flutter/flutter_webview_plugin/FlutterWebviewPlugin.h">
+      <file leaf-file-name="img_show.dart" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/popup/img_show.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="529">
+              <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -211,7 +206,6 @@
         <option value="$PROJECT_DIR$/lib/newshome.dart" />
         <option value="$PROJECT_DIR$/lib/api.dart" />
         <option value="$PROJECT_DIR$/lib/utils/scalableImage.dart" />
-        <option value="$PROJECT_DIR$/lib/popup/img_show.dart" />
         <option value="$PROJECT_DIR$/lib/utils/route_util.dart" />
         <option value="$PROJECT_DIR$/lib/widget/common_webview.dart" />
         <option value="$PROJECT_DIR$/lib/utils/file_util.dart" />
@@ -223,6 +217,7 @@
         <option value="$PROJECT_DIR$/lib/about.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/favor_list.dart" />
+        <option value="$PROJECT_DIR$/lib/popup/img_show.dart" />
       </list>
     </option>
   </component>
@@ -261,54 +256,19 @@
             <path>
               <item name="bd_app_flutter" type="b2602c69:ProjectViewProjectNode" />
               <item name="bd_app_flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bd_app_flutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bd_app_flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Flutter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bd_app_flutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bd_app_flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="Flutter.framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bd_app_flutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bd_app_flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="Flutter.framework" type="462c0819:PsiDirectoryNode" />
-              <item name="Headers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bd_app_flutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bd_app_flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="Flutter.framework" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bd_app_flutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bd_app_flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="flutter_webview_plugin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bd_app_flutter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bd_app_flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Runner" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bd_app_flutter" type="b2602c69:ProjectViewProjectNode" />
               <item name="bd_app_flutter" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="popup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bd_app_flutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bd_app_flutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -340,7 +300,7 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533263610325" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533267324708" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -635,6 +595,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="25" width="1440" height="797" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -652,7 +613,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.49213484" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25822604" sideWeight="0.4926004" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25822604" sideWeight="0.4926004" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.51167727" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -826,6 +787,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="956" column="19" lean-forward="false" selection-start-line="956" selection-start-column="19" selection-end-line="956" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -871,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/popup/img_show.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/widget/home_banner.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -896,6 +851,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#20#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -992,12 +950,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="107" column="25" lean-forward="false" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/news_home.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
+        <state relative-caret-position="0">
           <caret line="123" column="15" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="15" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -1067,14 +1028,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/about.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1088,7 +1041,23 @@
     <entry file="file://$PROJECT_DIR$/ios/Flutter/flutter_webview_plugin/FlutterWebviewPlugin.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/popup/img_show.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
           <folding />
         </state>
       </provider>

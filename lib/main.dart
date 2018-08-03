@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'news_home.dart';
 import 'favor_list.dart';
+import 'about.dart';
 
 void main() => runApp(new MyApp());
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => new NewsHome(),
         '/favorlist': (BuildContext context) => new FavorList(),
+        '/about': (BuildContext context) => new About(),
       },
       onGenerateRoute: _getRoute,
     );

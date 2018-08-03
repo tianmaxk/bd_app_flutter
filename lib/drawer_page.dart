@@ -48,6 +48,10 @@ class _DrawerBodyState extends State<DrawerBody> {
     RouteUtil.route2Web(context, '百度搜索', 'http://www.baidu.com');
   }
 
+  void _gotoAbout(){
+    Navigator.pushNamed(context, '/about');
+  }
+  
   @override
   void initState() {
     getOriImage();
@@ -90,6 +94,15 @@ class _DrawerBodyState extends State<DrawerBody> {
           child: ListTile(
             leading: const Icon(Icons.account_balance),
             title: const Text('百度搜素'),
+            enabled: true,
+          ),
+        ),
+        const Divider(),
+        InkWell(
+          onTap: () {_gotoAbout();},
+          child: ListTile(
+            leading: const Icon(Icons.my_location),
+            title: const Text('关于我们'),
             enabled: true,
           ),
         ),

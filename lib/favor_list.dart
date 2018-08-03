@@ -85,6 +85,35 @@ class _FavorListContent extends State<FavorListContent> {
         itemCount: items.length,
         itemBuilder: (context, index) {
           final item = items[index];
+
+//          return new Dismissible(
+//            key: new Key(item['nid']),
+//            child: new ListTile(
+//              title: new Text(item['title']),
+//              onTap: (){_onSelectNews(item);},
+//            ),
+//            onDismissed: (DismissDirection direction) {
+//              setState(() {
+//                items.removeAt(index);
+//                //this.reIndex();
+//              });
+//              direction == DismissDirection.endToStart
+//                  ? print("favourite")
+//                  : print("remove");
+//            },
+//            background: new Container(
+//                color: const Color.fromRGBO(183, 28, 28, 0.8),
+//                child: const ListTile(
+//                    leading: const Icon(Icons.delete,
+//                        color: Colors.white, size: 36.0))),
+//            secondaryBackground: new Container(
+//                color: const Color.fromRGBO(0, 96, 100, 0.8),
+//                child: const ListTile(
+//                    trailing: const Icon(Icons.favorite,
+//                        color: Colors.white, size: 36.0))),
+//          );
+
+
           //通过拖动来删除小部件的widget
           return new Dismissible(
               direction: DismissDirection.endToStart,
@@ -100,9 +129,11 @@ class _FavorListContent extends State<FavorListContent> {
                     new SnackBar(content: new Text("已经取消收藏"))
                 );
               },
-              //如果指定了background 他将会堆叠在Dismissible child后面 并在child移除时暴露
               background: new Container(
-                  color: Colors.red,
+                  color: const Color.fromRGBO(183, 28, 28, 0.8),
+                  child: const ListTile(
+                      trailing: const Icon(Icons.delete,
+                          color: Colors.white, size: 36.0))
               ),
               child: new ListTile(
                 title: new Text(item['title']),

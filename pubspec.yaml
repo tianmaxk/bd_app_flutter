@@ -24,6 +24,7 @@ dependencies:
   image_picker: ^0.4.6
   flutter_advanced_networkimage: ^0.2.11
   flutter_webview_plugin: ^0.1.6
+  tts: ^1.0.1
 
 dev_dependencies:
   flutter_test:

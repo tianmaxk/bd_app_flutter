@@ -3,6 +3,7 @@ import 'api.dart';
 import 'popup/img_show.dart';
 import 'utils/sp_util.dart';
 import 'utils/route_util.dart';
+import 'package:tts/tts.dart';
 
 class NewsDetails extends StatefulWidget {
   NewsDetails({Key key, this.newsInfo}) : super(key: key);
@@ -15,6 +16,9 @@ class NewsDetails extends StatefulWidget {
 class _NewsDetails extends State<NewsDetails> {
   bool isFavor = false;
   String orinid = '';
+  String languageAvailableText = '';
+  List<String> languages;
+  List<String> articleContent;
 
   void _onFavor() {
     String nid = widget.newsInfo['nid'];
@@ -34,12 +38,42 @@ class _NewsDetails extends State<NewsDetails> {
     });
   }
 
+  // Platform messages are asynchronous, so we initialize in an async method.
+  initPlatformState() async {
+    // Platform messages may fail, so we use a try/catch PlatformException.
+
+    languages = await Tts.getAvailableLanguages();
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted)
+      return;
+  }
+
   void _gotoWeb(){
     RouteUtil.route2Web(context, widget.newsInfo['title'], widget.newsInfo['url']);
   }
 
+  void _listenWeb() {
+//    var isGoodLanguage = await Tts.isLanguageAvailable(lang);
+//    var setLanguage = await Tts.setLanguage(lang);
+//    print(articleContent);
+    Tts.speak(articleContent.join(' '));
+  }
+
+  void _setArticleContent(List<String> lst){
+    print(lst);
+    articleContent = lst;
+  }
+
+  @override
+  void deactivate(){
+    print('deactivate');
+  }
+
   @override
   void initState(){
+//    initPlatformState();
     _setFavor();
   }
 
@@ -52,17 +86,20 @@ class _NewsDetails extends State<NewsDetails> {
         //为AppBar对象的actions属性添加一个IconButton对象，actions属性值可以是Widget类型的数组
         actions: <Widget>[
           new IconButton(icon: isFavor?new Icon(Icons.favorite):new Icon(Icons.favorite_border), onPressed: _onFavor),
-          new IconButton(icon: new Icon(Icons.web), onPressed: _gotoWeb)
+          new IconButton(icon: new Icon(Icons.language), onPressed: _gotoWeb),
+          new IconButton(icon: new Icon(Icons.headset_mic), onPressed: _listenWeb)
         ],
       ),
-      body: new NewsContent(newsInfo: widget.newsInfo)
+      body: new NewsContent(newsInfo: widget.newsInfo, setArticleContent: _setArticleContent)
     );
   }
 }
 
 class NewsContent extends StatefulWidget {
-  NewsContent({Key key, this.newsInfo}) : super(key: key);
+  NewsContent({Key key, this.newsInfo, this.setArticleContent}) : super(key: key);
   var newsInfo;
+  Function setArticleContent;
+  List<String> article = new List();
 
   @override
   _NewsContent createState() => new _NewsContent();
@@ -85,7 +122,23 @@ class _NewsContent extends State<NewsContent> {
     setState(() {
       newsInfo['url'] = newsjson['url'];
       newsDetails = newsjson;
+      _buildArticleCont();
     });
+  }
+
+  _buildArticleCont() {
+    widget.article.clear();
+    if(newsDetails!=null){
+      widget.article.add(newsDetails['title']);
+      var newsContent = newsDetails['content'];
+      for(int i=0;i<newsContent.length;i++) {
+        String txt = (newsContent[i]['data'] ??= '').toString().replaceAll(new RegExp(r'<span .*?>'), '').replaceAll('</span>', '');
+        if(txt!=''){
+          widget.article.add(txt);
+        }
+      }
+      widget.setArticleContent(widget.article);
+    }
   }
 
   @override
@@ -154,10 +207,11 @@ class _NewsContent extends State<NewsContent> {
             child: new Image.network(imageurl)
           ));
     } else if(type=='text'){
+      String txt = (news['data']??='').toString().replaceAll(new RegExp(r'<span .*?>'), '').replaceAll('</span>', '');
       return Container(
           padding: const EdgeInsets.all(6.0),
           child: Text(
-            (news['data']??='').toString().replaceAll(new RegExp(r'<span .*?>'), '').replaceAll('</span>', ''),
+            txt,
             style: TextStyle(
                 fontWeight: FontWeight.normal,
                 fontSize: 16.0

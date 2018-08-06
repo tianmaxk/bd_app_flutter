@@ -3,7 +3,8 @@ import 'api.dart';
 import 'popup/img_show.dart';
 import 'utils/sp_util.dart';
 import 'utils/route_util.dart';
-import 'package:tts/tts.dart';
+//import 'package:tts/tts.dart';
+import 'utils/tts.dart';
 
 class NewsDetails extends StatefulWidget {
   NewsDetails({Key key, this.newsInfo}) : super(key: key);
@@ -58,6 +59,7 @@ class _NewsDetails extends State<NewsDetails> {
 //    var isGoodLanguage = await Tts.isLanguageAvailable(lang);
 //    var setLanguage = await Tts.setLanguage(lang);
 //    print(articleContent);
+    print('_listenWeb');
     Tts.speak(articleContent.join(' '));
   }
 
@@ -69,6 +71,7 @@ class _NewsDetails extends State<NewsDetails> {
   @override
   void deactivate(){
     print('deactivate');
+    Tts.stop();
   }
 
   @override
@@ -132,9 +135,11 @@ class _NewsContent extends State<NewsContent> {
       widget.article.add(newsDetails['title']);
       var newsContent = newsDetails['content'];
       for(int i=0;i<newsContent.length;i++) {
-        String txt = (newsContent[i]['data'] ??= '').toString().replaceAll(new RegExp(r'<span .*?>'), '').replaceAll('</span>', '');
-        if(txt!=''){
-          widget.article.add(txt);
+        if(newsContent[i]['type']=='text'){
+          String txt = (newsContent[i]['data'] ??= '').toString().replaceAll(new RegExp(r'<span .*?>'), '').replaceAll('</span>', '');
+          if(txt!=''){
+            widget.article.add(txt);
+          }
         }
       }
       widget.setArticleContent(widget.article);

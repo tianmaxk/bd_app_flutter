@@ -415,13 +415,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.0"
-  tts:
-    dependency: "direct main"
-    description:
-      name: tts
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.1"
   typed_data:
     dependency: transitive
     description:

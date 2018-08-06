@@ -16,6 +16,7 @@
 		4070B7752113EBF4005855A6 /* SharedPreferencesPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4070B7742113EBF4005855A6 /* SharedPreferencesPlugin.m */; };
 		4070B7772113ECCB005855A6 /* PathProviderPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4070B7762113ECCB005855A6 /* PathProviderPlugin.m */; };
 		4070B7792113ED7D005855A6 /* ImagePickerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4070B7782113ED7D005855A6 /* ImagePickerPlugin.m */; };
+		40CE01BB21181AF800314124 /* TtsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CE01BA21181AF800314124 /* TtsPlugin.m */; };
 		9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9740EEBA1CF902C7004384FC /* Flutter.framework */; };
 		9705A1C71CF904A300538489 /* Flutter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9740EEBA1CF902C7004384FC /* Flutter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		978B8F6F1D3862AE00F588F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */; };
@@ -51,6 +52,8 @@
 		4070B7762113ECCB005855A6 /* PathProviderPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PathProviderPlugin.m; path = Flutter/path_provider/PathProviderPlugin.m; sourceTree = "<group>"; };
 		4070B7782113ED7D005855A6 /* ImagePickerPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ImagePickerPlugin.m; path = Flutter/image_picker/ImagePickerPlugin.m; sourceTree = "<group>"; };
 		4092C4B321130B1F001B4B37 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		40CE01B921181AF800314124 /* TtsPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TtsPlugin.h; sourceTree = "<group>"; };
+		40CE01BA21181AF800314124 /* TtsPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TtsPlugin.m; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		7AFFD8ED1D35381100E5BB4D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				40CE01B921181AF800314124 /* TtsPlugin.h */,
+				40CE01BA21181AF800314124 /* TtsPlugin.m */,
 				7AFFD8ED1D35381100E5BB4D /* AppDelegate.h */,
 				7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
@@ -253,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40CE01BB21181AF800314124 /* TtsPlugin.m in Sources */,
 				4070B7792113ED7D005855A6 /* ImagePickerPlugin.m in Sources */,
 				4070B7772113ECCB005855A6 /* PathProviderPlugin.m in Sources */,
 				4070B7752113EBF4005855A6 /* SharedPreferencesPlugin.m in Sources */,

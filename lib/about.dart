@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'utils/sp_util.dart';
-import 'news_details.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class About extends StatelessWidget {
   About({Key key}) : super(key: key);
@@ -18,7 +15,7 @@ class About extends StatelessWidget {
 //            new IconButton(icon: new Icon(Icons.web), onPressed: _gotoWeb)
 //          ],
         ),
-        body: new Text("hello")
+        body: new Text("欢迎")
     );
   }
 }

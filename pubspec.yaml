@@ -24,6 +24,7 @@ dependencies:
   image_picker: ^0.4.6
   flutter_advanced_networkimage: ^0.2.11
   flutter_webview_plugin: ^0.1.6
+  jaguar_flutter_asset: ^1.1.5
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +46,11 @@ flutter:
   assets:
     - images/loading.gif
     - images/userpic.jpeg
+    - assets/index.html
+    - assets/css/main.css
+    - assets/css/styles.css
+    - assets/help/index.html
+    - assets/img/jaguar.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

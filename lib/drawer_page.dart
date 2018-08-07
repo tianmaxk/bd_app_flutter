@@ -4,7 +4,9 @@ import 'dart:async';
 import 'package:image_picker/image_picker.dart';
 import 'utils/file_util.dart';
 import 'utils/route_util.dart';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
+final flutterWebviewPlugin = new FlutterWebviewPlugin();
 const String picturePath = "bd_user_pic_path.png";
 
 class DrawerBody extends StatefulWidget {
@@ -48,8 +50,14 @@ class _DrawerBodyState extends State<DrawerBody> {
     RouteUtil.route2Web(context, '百度搜索', 'http://www.baidu.com');
   }
 
+  void _gotoBaiduMap(){
+    RouteUtil.route2Web(context, '百度地图', 'http://map.baidu.com');
+  }
+
   void _gotoAbout(){
-    Navigator.pushNamed(context, '/about');
+//    flutterWebviewPlugin.launch('http://localhost:8080/index.html');
+    RouteUtil.route2Web(context, '关于', 'http://localhost:8080/index.html',nohttps:true);
+//    Navigator.pushNamed(context, '/about');
   }
   
   @override
@@ -94,6 +102,15 @@ class _DrawerBodyState extends State<DrawerBody> {
           child: ListTile(
             leading: const Icon(Icons.account_balance),
             title: const Text('百度搜素'),
+            enabled: true,
+          ),
+        ),
+        const Divider(),
+        InkWell(
+          onTap: () {_gotoBaiduMap();},
+          child: ListTile(
+            leading: const Icon(Icons.account_balance),
+            title: const Text('百度地图'),
             enabled: true,
           ),
         ),

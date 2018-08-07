@@ -4,14 +4,14 @@ import 'fix_url_util.dart';
 
 class RouteUtil{
 
-  static route2Web(BuildContext context, String title, String url) {
+  static route2Web(BuildContext context, String title, String url, {nohttps:false}) {
     if(null == url){
       return;
     }
     Navigator.of(context).push(new PageRouteBuilder(
         opaque: false,
         pageBuilder: (BuildContext context, _, __) {
-          return new CommonWebView(title, FixUrlUtil.getFixUrl(url));
+          return new CommonWebView(title, nohttps?url:FixUrlUtil.getFixUrl(url));
         },
         transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
           return new FadeTransition(

@@ -16,6 +16,7 @@ class NewsDetails extends StatefulWidget {
 
 class _NewsDetails extends State<NewsDetails> {
   bool isFavor = false;
+  bool isSpeak = false;
   String orinid = '';
   String languageAvailableText = '';
   List<String> languages;
@@ -60,6 +61,7 @@ class _NewsDetails extends State<NewsDetails> {
 //    var setLanguage = await Tts.setLanguage(lang);
 //    print(articleContent);
     print('_listenWeb');
+    isSpeak = true;
     Tts.speak(articleContent.join(' '));
   }
 
@@ -70,8 +72,9 @@ class _NewsDetails extends State<NewsDetails> {
 
   @override
   void deactivate(){
-    print('deactivate');
-    Tts.stop();
+    if(isSpeak==true){
+      Tts.stop();
+    }
   }
 
   @override

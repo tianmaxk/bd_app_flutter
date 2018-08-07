@@ -18,6 +18,7 @@ class _CommonWebViewPageState extends State<CommonWebView> {
 
   @override
   Widget build(BuildContext context) {
+    print('widget.url=${widget.url}');
     return new WebviewScaffold(
       url: widget.url,
       appBar: new AppBar(

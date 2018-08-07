@@ -56,7 +56,7 @@ class _DrawerBodyState extends State<DrawerBody> {
 
   void _gotoAbout(){
 //    flutterWebviewPlugin.launch('http://localhost:8080/index.html');
-    RouteUtil.route2Web(context, '关于', 'http://localhost:8080/index.html',nohttps:true);
+    RouteUtil.route2Web(context, '关于', 'http://0.0.0.0:8080/index.html',nohttps:true);
 //    Navigator.pushNamed(context, '/about');
   }
   

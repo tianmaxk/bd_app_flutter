@@ -15,11 +15,15 @@ class MyApp extends StatelessWidget {
   }
 
   buildAssetServer() async {
-    final server = new Jaguar();
+    print('buildAssetServer');
+    final server = new Jaguar(address: "0.0.0.0", port: 8080);
     server.addApi(new FlutterAssetServer());
     await server.serve();
-
-    server.log.onRecord.listen((r) => print(r));
+    print('server port: ${server.port}, host: ${server.address}');
+    server.log.onRecord.listen((r) {
+      print(r);
+      print('port:${server.port}');
+    });
   }
 
   @override

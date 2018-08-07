@@ -118,7 +118,7 @@ class _NewsListState extends State<NewsList> {
     } else {
       _newslist = newsListMap[category];
     }
-    print('_newslist.length='+_newslist.length.toString());
+//    print('_newslist.length='+_newslist.length.toString());
     if(_newslist.length<=0){
       return new Center(child: Image.asset(
         'images/loading.gif',
@@ -139,7 +139,7 @@ class _NewsListState extends State<NewsList> {
           if(index>_newslist.length-1){
             return null;
           }
-          print('_newslist.length='+_newslist.length.toString());
+//          print('_newslist.length='+_newslist.length.toString());
           return _buildRow(_newslist[index]); //把这个数据项塞入ListView中
         },
         shrinkWrap: true,
@@ -159,14 +159,14 @@ class _NewsListState extends State<NewsList> {
     var format = new DateFormat('yyyy-MM-dd HH:mm');
     var date = new DateTime.fromMicrosecondsSinceEpoch(timestamp*1000);
     var diff = date.difference(now);
-    print("timestamp="+timestamp.toString()+" diff="+diff.toString());
+//    print("timestamp="+timestamp.toString()+" diff="+diff.toString());
     return format.format(date);
   }
 
   _getNewsList(String category) async {
     var newslst = await Api().getNewsList(category:category);
     var newsjson = newslst['data']['news'];
-    print(newsjson);
+//    print(newsjson);
     setState(() {
       _newslist = newsjson;
     });

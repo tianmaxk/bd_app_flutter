@@ -16,6 +16,9 @@
 		4070B7752113EBF4005855A6 /* SharedPreferencesPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4070B7742113EBF4005855A6 /* SharedPreferencesPlugin.m */; };
 		4070B7772113ECCB005855A6 /* PathProviderPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4070B7762113ECCB005855A6 /* PathProviderPlugin.m */; };
 		4070B7792113ED7D005855A6 /* ImagePickerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4070B7782113ED7D005855A6 /* ImagePickerPlugin.m */; };
+		4079569021199E0800A1BA6C /* BarcodeScanPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4079568F21199E0800A1BA6C /* BarcodeScanPlugin.m */; };
+		407956922119A44700A1BA6C /* BarcodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407956912119A44700A1BA6C /* BarcodeScannerViewController.m */; };
+		407956942119A47900A1BA6C /* MTBBarcodeScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 407956932119A47900A1BA6C /* MTBBarcodeScanner.m */; };
 		40CE01BB21181AF800314124 /* TtsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CE01BA21181AF800314124 /* TtsPlugin.m */; };
 		9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9740EEBA1CF902C7004384FC /* Flutter.framework */; };
 		9705A1C71CF904A300538489 /* Flutter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9740EEBA1CF902C7004384FC /* Flutter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -51,6 +54,9 @@
 		4070B7742113EBF4005855A6 /* SharedPreferencesPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SharedPreferencesPlugin.m; path = Flutter/shared_preferences/SharedPreferencesPlugin.m; sourceTree = "<group>"; };
 		4070B7762113ECCB005855A6 /* PathProviderPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PathProviderPlugin.m; path = Flutter/path_provider/PathProviderPlugin.m; sourceTree = "<group>"; };
 		4070B7782113ED7D005855A6 /* ImagePickerPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ImagePickerPlugin.m; path = Flutter/image_picker/ImagePickerPlugin.m; sourceTree = "<group>"; };
+		4079568F21199E0800A1BA6C /* BarcodeScanPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BarcodeScanPlugin.m; path = Flutter/barcode_scan/BarcodeScanPlugin.m; sourceTree = "<group>"; };
+		407956912119A44700A1BA6C /* BarcodeScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BarcodeScannerViewController.m; path = Flutter/barcode_scan/BarcodeScannerViewController.m; sourceTree = "<group>"; };
+		407956932119A47900A1BA6C /* MTBBarcodeScanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTBBarcodeScanner.m; path = Flutter/MTBBarcodeScanner/MTBBarcodeScanner.m; sourceTree = "<group>"; };
 		4092C4B321130B1F001B4B37 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		40CE01B921181AF800314124 /* TtsPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TtsPlugin.h; sourceTree = "<group>"; };
 		40CE01BA21181AF800314124 /* TtsPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TtsPlugin.m; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				407956932119A47900A1BA6C /* MTBBarcodeScanner.m */,
+				407956912119A44700A1BA6C /* BarcodeScannerViewController.m */,
+				4079568F21199E0800A1BA6C /* BarcodeScanPlugin.m */,
 				4070B7782113ED7D005855A6 /* ImagePickerPlugin.m */,
 				4070B7762113ECCB005855A6 /* PathProviderPlugin.m */,
 				4070B7742113EBF4005855A6 /* SharedPreferencesPlugin.m */,
@@ -258,6 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407956942119A47900A1BA6C /* MTBBarcodeScanner.m in Sources */,
+				407956922119A44700A1BA6C /* BarcodeScannerViewController.m in Sources */,
+				4079569021199E0800A1BA6C /* BarcodeScanPlugin.m in Sources */,
 				40CE01BB21181AF800314124 /* TtsPlugin.m in Sources */,
 				4070B7792113ED7D005855A6 /* ImagePickerPlugin.m in Sources */,
 				4070B7772113ECCB005855A6 /* PathProviderPlugin.m in Sources */,

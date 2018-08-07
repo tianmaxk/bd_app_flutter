@@ -1,8 +1,12 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'api.dart';
 import 'news_details.dart';
 import 'drawer_page.dart';
+import 'package:barcode_scan/barcode_scan.dart';
+import 'package:flutter/services.dart';
+import 'utils/route_util.dart';
 
 Map<String,Object> newsListMap = {};
 
@@ -30,9 +34,33 @@ class NewsHome extends StatelessWidget {
 
   }
 
+  Future scan(BuildContext context) async {
+    String barcode = '';
+    try {
+      barcode = await BarcodeScanner.scan();
+      RouteUtil.route2Web(context, '扫码阅读', barcode);
+      return;
+    } on PlatformException catch (e) {
+      if (e.code == BarcodeScanner.CameraAccessDenied) {
+          barcode = '尚未授权照相机!';
+      } else {
+          barcode = 'Unknown error: $e';
+      }
+    } on FormatException{
+        barcode = 'null (User returned using the "back"-button before scanning anything. Result)';
+    } catch (e) {
+        barcode = 'Unknown error: $e';
+    }
+    Scaffold.of(context).showSnackBar(
+        new SnackBar(content: new Text("已经取消收藏"))
+    );
+  }
+
   void _handlePopupMenu(BuildContext context, String value){
     if(value=='myfavor'){
       Navigator.pushNamed(context, '/favorlist');
+    } else if(value=='scan'){
+      scan(context);
     }
   }
 
@@ -57,8 +85,8 @@ class NewsHome extends StatelessWidget {
                   child: const Text('我的收藏'),
                 ),
                 const PopupMenuItem<String>(
-                  value: 'history',
-                  child: const Text('浏览历史'),
+                  value: 'scan',
+                  child: const Text('扫码阅读'),
                 ),
               ],
             ),

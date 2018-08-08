@@ -26,6 +26,7 @@ dependencies:
   flutter_webview_plugin: ^0.1.6
   jaguar_flutter_asset: ^1.1.5
   barcode_scan: ^0.0.4
+  video_player: ^0.6.4
 
 dev_dependencies:
   flutter_test:

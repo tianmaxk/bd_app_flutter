@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'news_home.dart';
 import 'favor_list.dart';
+import 'video_panel.dart';
 import 'package:jaguar/jaguar.dart' show Jaguar;
 import 'package:jaguar_flutter_asset/jaguar_flutter_asset.dart';
 
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => new NewsHome(),
         '/favorlist': (BuildContext context) => new FavorList(),
+        '/video': (BuildContext context) => new VideoPanel(),
       },
       onGenerateRoute: _getRoute,
     );

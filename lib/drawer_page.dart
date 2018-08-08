@@ -57,7 +57,11 @@ class _DrawerBodyState extends State<DrawerBody> {
   void _gotoAbout(){
     RouteUtil.route2Web(context, '关于', 'http://0.0.0.0:8080/index.html',nohttps:true);
   }
-  
+
+  void _gotoVideo(){
+    Navigator.pushNamed(context, "/video");
+  }
+
   @override
   void initState() {
     getOriImage();
@@ -118,6 +122,15 @@ class _DrawerBodyState extends State<DrawerBody> {
           child: ListTile(
             leading: const Icon(Icons.my_location),
             title: const Text('关于我们'),
+            enabled: true,
+          ),
+        ),
+        const Divider(),
+        InkWell(
+          onTap: () {_gotoVideo();},
+          child: ListTile(
+            leading: const Icon(Icons.video_label),
+            title: const Text('视频'),
             enabled: true,
           ),
         ),

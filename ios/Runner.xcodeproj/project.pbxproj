@@ -19,6 +19,7 @@
 		4079569021199E0800A1BA6C /* BarcodeScanPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4079568F21199E0800A1BA6C /* BarcodeScanPlugin.m */; };
 		407956922119A44700A1BA6C /* BarcodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407956912119A44700A1BA6C /* BarcodeScannerViewController.m */; };
 		407956942119A47900A1BA6C /* MTBBarcodeScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 407956932119A47900A1BA6C /* MTBBarcodeScanner.m */; };
+		4079C393211A94B40019FDA8 /* VideoPlayerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4079C392211A94B40019FDA8 /* VideoPlayerPlugin.m */; };
 		40CE01BB21181AF800314124 /* TtsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CE01BA21181AF800314124 /* TtsPlugin.m */; };
 		9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9740EEBA1CF902C7004384FC /* Flutter.framework */; };
 		9705A1C71CF904A300538489 /* Flutter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9740EEBA1CF902C7004384FC /* Flutter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -57,6 +58,7 @@
 		4079568F21199E0800A1BA6C /* BarcodeScanPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BarcodeScanPlugin.m; path = Flutter/barcode_scan/BarcodeScanPlugin.m; sourceTree = "<group>"; };
 		407956912119A44700A1BA6C /* BarcodeScannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BarcodeScannerViewController.m; path = Flutter/barcode_scan/BarcodeScannerViewController.m; sourceTree = "<group>"; };
 		407956932119A47900A1BA6C /* MTBBarcodeScanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MTBBarcodeScanner.m; path = Flutter/MTBBarcodeScanner/MTBBarcodeScanner.m; sourceTree = "<group>"; };
+		4079C392211A94B40019FDA8 /* VideoPlayerPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VideoPlayerPlugin.m; path = Flutter/video_player/VideoPlayerPlugin.m; sourceTree = "<group>"; };
 		4092C4B321130B1F001B4B37 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		40CE01B921181AF800314124 /* TtsPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TtsPlugin.h; sourceTree = "<group>"; };
 		40CE01BA21181AF800314124 /* TtsPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TtsPlugin.m; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				4079C392211A94B40019FDA8 /* VideoPlayerPlugin.m */,
 				407956932119A47900A1BA6C /* MTBBarcodeScanner.m */,
 				407956912119A44700A1BA6C /* BarcodeScannerViewController.m */,
 				4079568F21199E0800A1BA6C /* BarcodeScanPlugin.m */,
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4079C393211A94B40019FDA8 /* VideoPlayerPlugin.m in Sources */,
 				407956942119A47900A1BA6C /* MTBBarcodeScanner.m in Sources */,
 				407956922119A44700A1BA6C /* BarcodeScannerViewController.m in Sources */,
 				4079569021199E0800A1BA6C /* BarcodeScanPlugin.m in Sources */,

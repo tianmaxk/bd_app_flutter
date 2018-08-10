@@ -62,6 +62,10 @@ class _DrawerBodyState extends State<DrawerBody> {
     Navigator.pushNamed(context, "/video");
   }
 
+  void _gotoChart(){
+    Navigator.pushNamed(context, "/chart");
+  }
+
   @override
   void initState() {
     getOriImage();
@@ -131,6 +135,15 @@ class _DrawerBodyState extends State<DrawerBody> {
           child: ListTile(
             leading: const Icon(Icons.video_label),
             title: const Text('视频'),
+            enabled: true,
+          ),
+        ),
+        const Divider(),
+        InkWell(
+          onTap: () {_gotoChart();},
+          child: ListTile(
+            leading: const Icon(Icons.insert_chart),
+            title: const Text('图表'),
             enabled: true,
           ),
         ),

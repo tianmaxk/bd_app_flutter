@@ -27,6 +27,7 @@ dependencies:
   jaguar_flutter_asset: ^1.1.5
   barcode_scan: ^0.0.4
   video_player: ^0.6.4
+  charts_flutter: ^0.4.0
 
 dev_dependencies:
   flutter_test:

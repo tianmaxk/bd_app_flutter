@@ -28,6 +28,7 @@ dependencies:
   barcode_scan: ^0.0.4
   video_player: ^0.6.4
   charts_flutter: ^0.4.0
+  flutter_svg: ^0.5.5+1
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +55,7 @@ flutter:
     - assets/css/styles.css
     - assets/help/index.html
     - assets/img/jaguar.jpg
+    - assets/earth.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

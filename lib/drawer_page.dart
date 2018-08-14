@@ -66,6 +66,10 @@ class _DrawerBodyState extends State<DrawerBody> {
     Navigator.pushNamed(context, "/chart");
   }
 
+  void _gotoSVG(){
+    Navigator.pushNamed(context, "/svgpanel");
+  }
+
   @override
   void initState() {
     getOriImage();
@@ -144,6 +148,15 @@ class _DrawerBodyState extends State<DrawerBody> {
           child: ListTile(
             leading: const Icon(Icons.insert_chart),
             title: const Text('图表'),
+            enabled: true,
+          ),
+        ),
+        const Divider(),
+        InkWell(
+          onTap: () {_gotoSVG();},
+          child: ListTile(
+            leading: const Icon(Icons.language),
+            title: const Text('SVG展示'),
             enabled: true,
           ),
         ),

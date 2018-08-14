@@ -3,6 +3,7 @@ import 'news_home.dart';
 import 'favor_list.dart';
 import 'video_panel.dart';
 import 'chart.dart';
+import 'svg_panel.dart';
 import 'package:jaguar/jaguar.dart' show Jaguar;
 import 'package:jaguar_flutter_asset/jaguar_flutter_asset.dart';
 
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/favorlist': (BuildContext context) => new FavorList(),
         '/video': (BuildContext context) => new VideoPanel(),
         '/chart': (BuildContext context) => new Chart(),
+        '/svgpanel': (BuildContext context) => new SVGPanel(),
       },
       onGenerateRoute: _getRoute,
     );

@@ -22,9 +22,10 @@ dependencies:
   dio: ^0.1.6
   path_provider: ^0.4.0
   image_picker: ^0.4.6
-  flutter_advanced_networkimage: ^0.2.11
+  flutter_advanced_networkimage: ^0.3.6
   flutter_webview_plugin: ^0.1.6
-  jaguar_flutter_asset: ^1.1.5
+  jaguar_flutter_asset: ^2.2.0
+  jaguar: ^2.2.6
   barcode_scan: ^0.0.4
   video_player: ^0.6.4
   charts_flutter: ^0.4.0

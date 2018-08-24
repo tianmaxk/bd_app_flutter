@@ -57,7 +57,7 @@ public class Tts implements OnInitListener {
         myTTS.setLanguage(Locale.CHINA);
         int steplen = 100;
         int total = text.length();
-        myTTS.speak(text.substring(0,steplen), TextToSpeech.QUEUE_FLUSH, null);
+        myTTS.speak((steplen>total)?text:text.substring(0,steplen), TextToSpeech.QUEUE_FLUSH, null);
         for(int i=steplen;i<total;i+=steplen){
             if(i+steplen>total){
                 myTTS.speak(text.substring(i), TextToSpeech.QUEUE_ADD, null);
